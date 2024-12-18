@@ -24,17 +24,19 @@ html{
 }
 img{
     width: 100%;
+    display: inline-block;
 }
 body{
     padding: 1.75rem .875rem;
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
+    place-content: center;
     gap: 1.75rem;
 }
 section{
     border-radius: 10px;
-
+    overflow: hidden;
 }
 .yellow{
     color: var(--Yellow-500);
@@ -70,6 +72,7 @@ section{
     letter-spacing: -1px;
 }
 .two img{
+    width: 320px;
     margin-bottom: 1rem;
     box-shadow: -10px 5px 15px #f0f0f087;
 }
@@ -81,12 +84,12 @@ section{
     font-weight: 600;
     line-height: .9;
     letter-spacing: -1px;
-    height: 12rem;
     overflow: hidden;
 }
 .three img{
     width: 210px;
-    margin-top: 1rem;    
+    margin-top: 1rem; 
+    margin-bottom: -1.4rem;   
 }
 .four{
     background-color: var(--Purple-100);
@@ -98,6 +101,7 @@ section{
     text-align: center;
 }
 .four img{
+    width: 310px;
     margin-block: 1.25rem;
 }
 .four p:last-child{
@@ -114,12 +118,15 @@ section{
     color: white;
     font-size: 1.75rem;
     line-height: .9;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .five img{
     width: 230px;
-    margin-bottom: 2rem;
 }
 .five p{
+    margin-top: 2rem;
     padding-inline: 2rem;
 }
 .six{
@@ -161,3 +168,83 @@ section{
     margin-top: 1rem;
     margin-bottom: -10px;
 }
+@media screen and (min-width: 600px){  
+    body{
+      grid-template-columns: repeat(4, 260px);  
+      grid-template-rows: repeat(10, auto);
+    }
+     .one{
+      grid-column: 2 /span 2;
+      grid-row: 1 / 5;
+      padding: 3.8rem;
+    }
+    .one .title{
+        font-size: 3.25rem;
+    }
+    .two{
+      grid-column: 2/3;
+      grid-row: 5 /span 3;
+      font-size: 1.8rem;
+      padding: 1.25rem 1.5rem;
+    }
+    .three{
+      grid-column: 3/4;
+      grid-row: 5 /span 3;
+      font-size: 1.8rem;
+      padding: 1.3rem;
+    }
+    .three img{
+        margin-bottom: -7rem;
+    }
+   .four{
+      grid-row: 1/span 7;
+      grid-column: 4;
+      font-size: 1.8rem;
+      padding: 2.7rem 1.75rem; 
+      text-align: start;
+    }
+    .four img{
+        width: 360px;
+    }
+    .four p:last-child{
+        padding-inline: 0;
+        /* margin-top: 2rem; */
+    }
+    .five{
+      grid-column: 3 / span 2; 
+      grid-row: 8/11;
+      flex-direction: row;
+      text-align: start;
+    }
+    .five p{
+        margin-top: 0;
+        font-size: 2.2rem;
+        padding-inline: .5rem;
+    }
+    .six{
+      grid-column: 2 /3;
+      grid-row: 8/11;
+      padding: .875rem 1.3rem;
+    }
+    .six p:first-child{
+        font-size: 3.5rem;
+    }
+    .six img{
+        margin-top: 1.75rem;
+    }
+    .seven{
+      grid-column: 1 /2;
+      grid-row: 1/ span 5;
+      font-size: 2.25rem;
+      padding-top: 5rem;
+      line-height: .9;
+    }
+    .eight{
+      grid-column: 1 /2;
+      grid-row: 6/ span 5;
+      font-size: 2.25rem;
+    }
+    .eight img{
+        margin-top: 2.5rem;
+    }
+  }
